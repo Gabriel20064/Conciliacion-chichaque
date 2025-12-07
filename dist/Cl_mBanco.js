@@ -2,6 +2,9 @@ import Cl_mTransaccion from "./Cl_mTransaccion.js";
 export default class Cl_mBanco {
     transacciones = [];
     STORAGE_KEY = "Movimientos_Bancarios_data";
+    //Atributos derivados para los metodos de conciliacion (revision)
+    acmMontoCargos = 0;
+    acmMontoAbonos = 0;
     constructor() {
         this.cargar();
     }
@@ -58,5 +61,15 @@ export default class Cl_mBanco {
     }
     get dtTransacciones() {
         return this.transacciones;
+    }
+    //Test
+    get totalCargos() {
+        return this.transacciones.reduce((sum, t) => sum + t.montoCargo(), 0);
+    }
+    get totalAbonos() {
+        return this.transacciones.reduce((sum, t) => sum + t.montoAbono(), 0);
+    }
+    saldoFinal() {
+        return this.totalAbonos - this.totalCargos;
     }
 }

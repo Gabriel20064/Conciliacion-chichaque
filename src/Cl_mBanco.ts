@@ -3,6 +3,9 @@ import Cl_mTransaccion, { iTransaccion } from "./Cl_mTransaccion.js";
 export default class Cl_mBanco {
     private transacciones: Cl_mTransaccion[] = [];
     private readonly STORAGE_KEY = "Movimientos_Bancarios_data";
+    //Atributos derivados para los metodos de conciliacion (revision)
+    private acmMontoCargos: number = 0;
+    private acmMontoAbonos: number = 0; 
 
     constructor() {
         this.cargar();
@@ -60,5 +63,17 @@ export default class Cl_mBanco {
 
     get dtTransacciones(): Cl_mTransaccion[] {
         return this.transacciones;
+    }
+        
+    //Test //Nuevo
+    public get totalCargos(): number {
+        return this.transacciones.reduce((sum, t) => sum + t.montoCargo(), 0);//Nuevo
+    }
+
+    public get totalAbonos(): number {
+        return this.transacciones.reduce((sum, t) => sum + t.montoAbono(), 0);//Nuevo
+    }
+    public saldoFinal(): number {
+        return this.totalAbonos - this.totalCargos;//Nuevo
     }
 }
