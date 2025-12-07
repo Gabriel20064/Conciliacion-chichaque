@@ -33,19 +33,22 @@
     <section id="registroTransaccion" hidden>
         <h3>Nueva Transaccion</h3>
 
-            <label>Tipo de Transaccion (1-cargo, 2-abono):</label>
-                <input id= "registroTransaccion_inTipoTransaccion" type="text"> <br><br>
+            <label>Tipo de Transaccion:</label>
+                <select id="registroTransaccion_inTipoTransaccion">
+                    <option value= 1 >Cargo</option>
+                    <option value= 2 >Abono</option>
+                </select><br>
 
             <label>Fecha: </label>
-                <input id= "registroTransaccion_inFecha" type="date" name="fecha" required><br><br>
+                <input id= "registroTransaccion_inFecha" type="date" name="fecha" required><br>
 
             <label>Descripcion:</label>
-                <input id= "registroTransaccion_inDescripcion" type="text" name="descripcion" minlength="1" maxlength="30" required placeholder="Ej. Pago de servicios"><br><br>
+                <input id= "registroTransaccion_inDescripcion" type="text" name="descripcion" minlength="1" maxlength="30" required placeholder="Ej. Pago de servicios"><br>
 
             <label>Referencia:</label>
-                <input id="registroTransaccion_inReferencia" type="text" name="referencia" minlength="7" maxlength="7" required placeholder="Ej. TRX-002"><br><br>
+                <input id="registroTransaccion_inReferencia" type="text" name="referencia" minlength="7" maxlength="7" required placeholder="Ej. TRX-002"><br>
 
-                <label>Categoria:</label>
+            <label>Categoria:</label>
                 <select id= "registroTransaccion_inCategoria" type="text" name="categoria" required>
                     <option value= 1 >Ingreso</option>
                     <option value= 2 >Alimentación</option>
@@ -56,10 +59,10 @@
                     <option value= 7 >Educación</option>
                     <option value= 8 >Gasto del Hogar</option>
                     <option value= 9 >Otros</option>
-                </select><br><br>
+                </select><br>
 
-                <label>Monto:</label>
-                <input id="registroTransaccion_inMonto" type="number" name="monto" step="0.01" required><br><br>
+            <label>Monto:</label>
+            <input id="registroTransaccion_inMonto" type="number" name="monto" step="0.01" required><br><br>
 
         <button id="registroTransaccion_btGuardar">Guardar</button>
         <button id="registroTransaccion_btVolver">Volver</button>

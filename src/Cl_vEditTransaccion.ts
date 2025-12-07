@@ -7,7 +7,7 @@ export default class Cl_vEditTransaccion extends Cl_vGeneral {
     private inDescripcion: HTMLInputElement;
     private inMonto: HTMLInputElement;
     private inReferencia: HTMLInputElement;
-    private inTipoTransaccion: HTMLSelectElement;
+    private inTipoTransaccion: HTMLInputElement;
     private inCategoria: HTMLInputElement;
     private btCancelar: HTMLButtonElement;
     private btGuardar: HTMLButtonElement;
@@ -19,7 +19,7 @@ export default class Cl_vEditTransaccion extends Cl_vGeneral {
         this.inDescripcion = this.crearHTMLInputElement("inDescripcion");
         this.inMonto = this.crearHTMLInputElement("inMonto");
         this.inReferencia = this.crearHTMLInputElement("inReferencia");
-        this.inTipoTransaccion = this.crearHTMLSelectElement("inTipoTransaccion");
+        this.inTipoTransaccion = this.crearHTMLInputElement("inTipoTransaccion");
         this.inCategoria = this.crearHTMLInputElement("inCategoria");
         this.btGuardar = this.crearHTMLButtonElement("btGuardar", {
             onclick: () => this.guardar()
