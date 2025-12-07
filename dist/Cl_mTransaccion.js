@@ -76,6 +76,36 @@ export default class Cl_mTransaccion {
         else
             return 0;
     }
+    categoriaTexto() {
+        switch (this.categoria) {
+            case 1:
+                return "Ingreso";
+                break;
+            case 2:
+                return "Alimentación";
+                break;
+            case 3:
+                return "Servicios Basicos";
+                break;
+            case 4:
+                return "Artículos de Vestimenta";
+                break;
+            case 5:
+                return "Servicios Publicos";
+                break;
+            case 6:
+                return "Entretenimiento";
+                break;
+            case 7:
+                return "Educación";
+                break;
+            case 8:
+                return "Gasto del Hogar";
+                break;
+            default:
+                return "Otros";
+        }
+    }
     toJSON() {
         return {
             descripcion: this.descripcion,
