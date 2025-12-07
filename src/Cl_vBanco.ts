@@ -27,11 +27,11 @@ export default class Cl_vBanco extends Cl_vGeneral {
                 <td>${trans.tipoTransaccion === 1 ? "Cargo" : "Abono"}</td>
                 <td class= "${trans.tipoTransaccion === 1 ? "negative-amount" : "positive-amount"}">${trans.tipoTransaccion === 1 ? (trans.monto * -1).toFixed(2) : trans.monto.toFixed(2)}</td>
                 <td>${trans.referencia}</td>
-                <td>${trans.categoria}</td>
+                <td>${trans.categoriaTexto()}</td>
                 <td>
-                    <button class="btDetails" data-ref="${trans.referencia}" title="Detalles de Transaccion" style="padding:4px;">Detalles</button>
-                    <button class="btEdit" data-ref="${trans.referencia}" title="Editar Transaccion" style="padding:4px;">Editar</button>
-                    <button class="btDelete" data-ref="${trans.referencia}" title="Eliminar Transaccion" style="color:red; background:none; border:1px solid red; padding:4px;">X</button>
+                    <button class="btDetails" data-ref="${trans.referencia}" title="Detalles de la Transaccion" style=" font-size: 1.5rem; color:black; background:black; border:2px solid black; padding:3px;">❔</button>
+                    <button class="btEdit" data-ref="${trans.referencia}" title="Editar Transaccion" style=" font-size: 1.5rem; color:black; background:black; border:2px solid black; padding:3px;">⚙️</button>
+                    <button class="btDelete" data-ref="${trans.referencia}" title="Eliminar Transaccion" style=" font-size: 1.5rem; color:red; background:red; border:2px solid black; padding:3px;">🗑️</button>
                 </td>
             </tr>`;
         });
