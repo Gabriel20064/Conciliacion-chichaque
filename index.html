@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HyperLinkBlocked</title>
+</head>
+<body>
+    <h2 class="titleProyecto">Registros Bancarios</h2>
+    
+    <section id="transacciones">
+        <h3>Transacciones</h3>
+        <div style="margin-bottom: 10px;">
+            <table>
+                <thead>
+                    <tr>
+                    <th style="width: 80px;">Fecha</th>
+                    <th style="width: 200px;">Descripcion</th>
+                    <th style="width: 80px;">Tipo de Transaccion</th>
+                    <th style="width: 200px;">Monto</th>
+                    <th style="width: 100px;">Referencia</th>
+                    <th style="width: 120px;">Categoria</th>
+                    <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="transacciones_divTransacciones"></tbody>
+            </table>
+        </div>
+        <button id="transacciones_btAdd" style="font-size: 1.2rem;">&#43;</button> 
+    </section>
+
+    <section id="registroTransaccion" hidden>
+        <h3>Nueva Transaccion</h3>
+
+            <label>Tipo de Transaccion (1-cargo, 2-abono):</label>
+                <input id= "registroTransaccion_inTipoTransaccion" type="text"> <br><br>
+
+            <label>Fecha: </label>
+                <input id= "registroTransaccion_inFecha" type="date" name="fecha" required><br><br>
+
+            <label>Descripcion:</label>
+                <input id= "registroTransaccion_inDescripcion" type="text" name="descripcion" minlength="1" maxlength="30" required placeholder="Ej. Pago de servicios"><br><br>
+
+            <label>Referencia:</label>
+                <input id="registroTransaccion_inReferencia" type="text" name="referencia" minlength="7" maxlength="7" required placeholder="Ej. TRX-002"><br><br>
+
+                <label>Categoria:</label>
+                <select id= "registroTransaccion_inCategoria" type="text" name="categoria" required>
+                    <option value= 1 >Ingreso</option>
+                    <option value= 2 >Alimentacion</option>
+                    <option value= 3 >Servicios</option>
+                    <option value= 4 >Vestido</option>
+                    <option value= 5 >Transporte</option>
+                    <option value= 6 >Entretenimiento</option>
+                    <option value= 7 >Estudios</option>
+                    <option value= 8 >Vivienda</option>
+                    <option value= 9 >otros</option>
+                </select><br><br>
+
+                <label>Monto:</label>
+                <input id="registroTransaccion_inMonto" type="number" name="monto" step="0.01" required><br><br>
+
+        <button id="registroTransaccion_btGuardar">Guardar</button>
+        <button id="registroTransaccion_btVolver">Volver</button>
+    </section>
+
+    <section id="editTransaccion" hidden>
+        <h4>Editar Transaccion</h4>
+        <input id="editTransaccion_inReferenciaHidden" type="hidden">
+
+        <label>Tipo de Transaccion (1-cargo, 2-abono):</label>
+                  <input id= "editTransaccion_inTipoTransaccion" type="text"> <br><br>
+
+
+            <label>Fecha: </label>
+                <input id= "editTransaccion_inFecha" type="date" name="fecha" required><br><br>
+
+            <label>Descripcion:</label>
+                <input id= "editTransaccion_inDescripcion" type="text" name="descripcion" minlength="1" maxlength="30" required placeholder="Ej. Pago de servicios"><br><br>
+
+            <label>Referencia:</label>
+                <input id="editTransaccion_inReferencia" type="text" name="referencia" minlength="7" maxlength="7" required placeholder="Ej. TRX-002"><br><br>
+
+                <label>Categoria:</label>
+                <select id= "editTransaccion_inCategoria" type="text" name="categoria" required>
+                    <option value= 1 >Ingreso</option>
+                    <option value= 2 >Alimentacion</option>
+                    <option value= 3 >Servicios</option>
+                    <option value= 4 >Vestido</option>
+                    <option value= 5 >Transporte</option>
+                    <option value= 6 >Entretenimiento</option>
+                    <option value= 7 >Estudios</option>
+                    <option value= 8 >Vivienda</option>
+                    <option value= 9 >otros</option>
+                </select><br><br>
+
+                <label>Monto:</label>
+                <input id="editTransaccion_inMonto" type="number" name="monto" step="0.01" required><br><br>
+
+        <button id="editTransaccion_btGuardar">Guardar</button>
+        <button id="editTransaccion_btCancelar">Cancelar</button>
+    </section>
+
+    <script type="module">
+        import Cl_index from "./dist/Cl_index.js";
+        new Cl_index();
+    </script>
+</body>
+</html>
