@@ -17,6 +17,15 @@ export default class Cl_mBanco {
     categoria7 = 0; // Educacion
     categoria8 = 0; // Gasto del Hogar
     categoria9 = 0; // Otros
+    cntCategoria1 = 0;
+    cntCategoria2 = 0;
+    cntCategoria3 = 0;
+    cntCategoria4 = 0;
+    cntCategoria5 = 0;
+    cntCategoria6 = 0;
+    cntCategoria7 = 0;
+    cntCategoria8 = 0;
+    cntCategoria9 = 0;
     //Analisis
     categoriaMayorGasto = 0; // Categoria con mayor gasto
     montoMayorGasto = 0; // Monto de la categoria con mayor gasto

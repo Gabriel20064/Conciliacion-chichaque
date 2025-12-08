@@ -85,8 +85,8 @@ export default class vTransaccion extends Cl_vGeneral {
             alert("El monto debe ser mayor a 0.");
             return;
         }
-        if (this.inReferencia.value.length !== 3) {
-            alert("La referencia debe tener 3 caracteres.");
+        if (this.inReferencia.value.length !== 7) {
+            alert("La referencia debe tener 7 caracteres.");
             return;
         }
         if (+this.inTipoTransaccion.value === 1 && +this.inCategoria.value === 1) {

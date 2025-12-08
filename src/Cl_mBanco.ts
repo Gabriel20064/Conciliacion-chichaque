@@ -18,6 +18,15 @@ export default class Cl_mBanco {
     private categoria7: number = 0; // Educacion
     private categoria8: number = 0; // Gasto del Hogar
     private categoria9: number = 0; // Otros
+    private cntCategoria1: number = 0;
+    private cntCategoria2: number = 0;
+    private cntCategoria3: number = 0;
+    private cntCategoria4: number = 0;
+    private cntCategoria5: number = 0;
+    private cntCategoria6: number = 0;
+    private cntCategoria7: number = 0;
+    private cntCategoria8: number = 0;
+    private cntCategoria9: number = 0;
     //Analisis
     private categoriaMayorGasto: number = 0; // Categoria con mayor gasto
     private montoMayorGasto: number = 0; // Monto de la categoria con mayor gasto
@@ -81,7 +90,7 @@ export default class Cl_mBanco {
     
     
     //Metodos 
-        /*public resumen(transacciones: Cl_mTransaccion[]): { totalIngresos: number; totalEgresos: number; saldoFinal:number }{
+     /*   public resumen(transacciones: Cl_mTransaccion[]): { totalIngresos: number; totalEgresos: number; saldoFinal:number }{
         for (let t of transacciones) {
             if (t.tipoTransaccion === 1) {
                 this.acmMontoCargos += t.monto;
@@ -89,7 +98,110 @@ export default class Cl_mBanco {
                 this.acmMontoAbonos += t.monto;
             }
         }
-        return { totalIngresos: this.acmMontoAbonos, totalEgresos: this.acmMontoCargos, saldoFinal: this.acmMontoAbonos - this.acmMontoCargos }; 
-    }*/
+        return { totalIngresos: this.acmMontoAbonos, totalEgresos: this.acmMontoCargos, saldoFinal: this.acmMontoAbonos - this.acmMontoCargos };    
+    }
 
-}
+        public DesgloseCategoria(transacciones: Cl_mTransaccion[]): { 
+    ingresos: number; 
+    alimentacion: number; 
+    serviciosBasicos: number; 
+    articulosVestimenta: number; 
+    serviciosPublicos: number; 
+    entretenimiento: number; 
+    educacion: number; 
+    gastoHogar: number; 
+    otros: number; 
+    pIngresos: number;
+    pAlimentacion: number; 
+    pServiciosBasicos: number; 
+    pArticulosVestimenta: number; 
+    pServiciosPublicos: number; 
+    pEntretenimiento: number; 
+    pEducacion: number; 
+    pGastoHogar: number; 
+    pOtros: number; 
+} {
+    let ingresos = 0;
+    let alimentacion = 0;
+    let serviciosBasicos = 0;
+    let articulosVestimenta = 0;
+    let serviciosPublicos = 0;
+    let entretenimiento = 0;
+    let educacion = 0;
+    let gastoHogar = 0;
+    let otros = 0;
+    let pIngresos = 0;
+    let pAlimentacion = 0;
+    let pServiciosBasicos = 0;
+    let pArticulosVestimenta = 0;
+    let pServiciosPublicos = 0;
+    let pEntretenimiento = 0;
+    let pEducacion = 0;
+    let pGastoHogar = 0;
+    let pOtros = 0;
+
+    for (let t of transacciones) {
+        switch (t.categoria) {
+            case 1:
+                ingresos += t.monto;
+                break;
+            case 2:
+                alimentacion += t.monto;
+                break;
+            case 3:
+                serviciosBasicos += t.monto;
+                break;
+            case 4:
+                articulosVestimenta += t.monto;
+                break;
+            case 5:
+                serviciosPublicos += t.monto;
+                break;
+            case 6:
+                entretenimiento += t.monto;
+                break;
+            case 7:
+                educacion += t.monto;
+                break;
+            case 8:
+                gastoHogar += t.monto;
+                break;
+            case 9:
+                otros += t.monto;
+                break;
+            default:
+                break;
+        }
+    }
+    pIngresos = this.cntCategoria1 / this.cntTransacciones;
+    pAlimentacion = this.cntCategoria2 / this.cntTransacciones;
+    pServiciosBasicos = this.cntCategoria3 / this.cntTransacciones;
+    pArticulosVestimenta = this.cntCategoria4 / this.cntTransacciones;
+    pServiciosPublicos = this.cntCategoria5 / this.cntTransacciones;
+    pEntretenimiento = this.cntCategoria6 / this.cntTransacciones;
+    pEducacion = this.cntCategoria7 / this.cntTransacciones;
+    pGastoHogar = this.cntCategoria8 / this.cntTransacciones;
+    pOtros = this.cntCategoria9 / this.cntTransacciones;
+
+    return { 
+        ingresos, 
+        alimentacion, 
+        serviciosBasicos, 
+        articulosVestimenta, 
+        serviciosPublicos, 
+        entretenimiento, 
+        educacion, 
+        gastoHogar, 
+        otros, 
+        pIngresos,
+        pAlimentacion, 
+        pServiciosBasicos, 
+        pArticulosVestimenta, 
+        pServiciosPublicos, 
+        pEntretenimiento, 
+        pEducacion, 
+        pGastoHogar, 
+        pOtros 
+    };
+}*/
+} 

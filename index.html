@@ -48,11 +48,12 @@
             </table>
         </div>
             <section id="transacciones">
-        <h3>Resultados para la Conciliacion</h3>
+        <h3>Resumen de Conciliacion</h3>
         <div>
-            <h4 id="totalDeAbonos">Total de abonos: </h4>
-            <h5 id="totalDeCargos">Total de cargos: </h5>
-            <h1 id="saldoFinal">Saldos finales: </h1>
+            <h6>Saldo Inicial: Bs. 5000.00</h6>
+            <h4 id="totalDeAbonos"></h4>
+            <h5 id="totalDeCargos"></h5>
+            <h1 id="saldoFinal"></h1>
         </div>
     </section>
     </section>
@@ -70,7 +71,7 @@
                 <input id= "registroTransaccion_inFecha" type="date" name=fecha required><br>
 
             <label>Descripcion:</label>
-                <input id= "registroTransaccion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="30" required placeholder="Ej. Pago de servicios"><br>
+                <input id= "registroTransaccion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="35" required placeholder="Ej. Pago de servicios"><br>
 
             <label>Referencia:</label>
                 <input id="registroTransaccion_inReferencia" type="text" name=referencia minlength=1 maxlength=7 required placeholder="Ej.TRX-001"><br>
@@ -109,7 +110,7 @@
                 <input id= "editTransaccion_inFecha" type="date" name=fecha required><br>
 
             <label>Descripcion:</label>
-                <input id= "editTransaccion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="30" required placeholder="Ej. Pago de servicios"><br>
+                <input id= "editTransaccion_inDescripcion" type="text" name="descripcion" minlength=1 maxlength="35" required placeholder="Ej. Pago de servicios"><br>
 
             <label>Referencia:</label>
                 <input id="editTransaccion_inReferencia" type="text" name="referencia" minlength="1" maxlength="7" required placeholder="Ej.TRX-001"><br>
@@ -158,11 +159,10 @@
       if (tipo === 1) totalCargos -= monto; // Cargo
       else if (tipo === 2) totalAbonos += monto; // Abono
     }
-    return { totalCargos, totalAbonos, saldoFinal: totalAbonos + totalCargos };
+    return { totalCargos, totalAbonos, saldoFinal: totalAbonos + totalCargos + 5000.00 }; // saldo inicial de 5000.00
   }
 
-  function formatear(n) { return Number(n).toFixed(2); }
-
+  function formatearNumero(n) { return Number(n).toFixed(2); }
   function actualizarDOM() {
     const trans = leerTransacciones();
     const tot = calcularTotales(trans);
@@ -171,9 +171,10 @@
     const elAbonos = document.getElementById("totalDeAbonos");
     const elSaldo = document.getElementById("saldoFinal");
 
-    if (elCargos) elCargos.textContent = `Total de cargos: Bs. ${formatear(tot.totalCargos)}`;
-    if (elAbonos) elAbonos.textContent = `Total de abonos: Bs. ${formatear(tot.totalAbonos)}`;
-    if (elSaldo)  elSaldo.textContent  = `Saldos finales: Bs. ${formatear(tot.saldoFinal)}`;
+    if (elCargos) elCargos.textContent = `Total de cargos: Bs. ${formatearNumero(tot.totalCargos)}`;
+    if (elAbonos) elAbonos.textContent = `Total de abonos: Bs. ${formatearNumero(tot.totalAbonos)}`;
+    if (elSaldo)  elSaldo.textContent  = `Saldos finales: Bs. ${formatearNumero(tot.saldoFinal)}`;
+
   }
 
   // Observador para detectar cambios en la tabla de transacciones y actualizar totales

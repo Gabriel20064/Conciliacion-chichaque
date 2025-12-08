@@ -72,4 +72,7 @@ export default class Cl_vBanco extends Cl_vGeneral {
     public ocultar() {
         this.vista!.hidden = true;
     }
+
+
+    //Metodos
 }
