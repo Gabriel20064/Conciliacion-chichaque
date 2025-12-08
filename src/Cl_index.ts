@@ -3,7 +3,7 @@ import Cl_mBanco from "./Cl_mBanco.js";
 import Cl_vBanco from "./Cl_vBanco.js";
 import Cl_vTransaccion from "./Cl_vTransaccion.js";
 import Cl_vEditTransaccion from "./Cl_vEditTransaccion.js";
-
+import {dtTransacciones} from "./Cl_controlador.js";
 
 export default class Cl_index {
   constructor() {
@@ -17,6 +17,9 @@ export default class Cl_index {
     let controlador = new Cl_controlador(
         modelo, vista, vTransaccion, vEditTransaccion
     );
+  dtTransacciones.forEach((transaccion) => {
+    
+  })
     
     vista.controlador = controlador;
     vTransaccion.controlador = controlador;
