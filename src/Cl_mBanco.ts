@@ -3,7 +3,7 @@ import Cl_mTransaccion, { iTransaccion } from "./Cl_mTransaccion.js";
 export default class Cl_mBanco {
     private transacciones: Cl_mTransaccion[] = [];
     private readonly STORAGE_KEY = "Movimientos_Bancarios_data";
-    //Atributos derivados para los metodos de conciliacion (revision)
+    //Atributos derivados para los metodos de conciliacion (en revision)
     //Resumen
     private acmMontoCargos: number = 0;
     private acmMontoAbonos: number = 0;
