@@ -17,12 +17,12 @@ export default class Cl_index {
     let controlador = new Cl_controlador(
         modelo, vista, vTransaccion, vEditTransaccion
     );
-    // dataTransacciones
+    /* dataTransacciones
   dtTransacciones.forEach((transaccion) => {
     modelo.procesarTransaccion({
       transaccion: new Cl_mTransaccion(transaccion),
     });
-  });    
+  });    */
     vista.controlador = controlador;
     vTransaccion.controlador = controlador;
     vEditTransaccion.controlador = controlador;
