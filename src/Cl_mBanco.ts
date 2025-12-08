@@ -4,8 +4,23 @@ export default class Cl_mBanco {
     private transacciones: Cl_mTransaccion[] = [];
     private readonly STORAGE_KEY = "Movimientos_Bancarios_data";
     //Atributos derivados para los metodos de conciliacion (revision)
+    //Resumen
     private acmMontoCargos: number = 0;
-    private acmMontoAbonos: number = 0; 
+    private acmMontoAbonos: number = 0;
+    //Desglose por categoria
+    private cntTransacciones: number = 0;
+    private categoria1: number = 0; // Ingresos
+    private categoria2: number = 0; // Alimentacion
+    private categoria3: number = 0; // Servicios Basicos
+    private categoria4: number = 0; // Articulos de Vestimenta
+    private categoria5: number = 0; // Servicios Publicos
+    private categoria6: number = 0; // Entretenimiento
+    private categoria7: number = 0; // Educacion
+    private categoria8: number = 0; // Gasto del Hogar
+    private categoria9: number = 0; // Otros
+    //Analisis
+    private categoriaMayorGasto: number = 0; // Categoria con mayor gasto
+    private montoMayorGasto: number = 0; // Monto de la categoria con mayor gasto
 
     constructor() {
         this.cargar();
@@ -63,5 +78,18 @@ export default class Cl_mBanco {
     get dtTransacciones(): Cl_mTransaccion[] {
         return this.transacciones;
     }
-        
+    
+    
+    //Metodos 
+        /*public resumen(transacciones: Cl_mTransaccion[]): { totalIngresos: number; totalEgresos: number; saldoFinal:number }{
+        for (let t of transacciones) {
+            if (t.tipoTransaccion === 1) {
+                this.acmMontoCargos += t.monto;
+            } else if (t.tipoTransaccion === 2) {
+                this.acmMontoAbonos += t.monto;
+            }
+        }
+        return { totalIngresos: this.acmMontoAbonos, totalEgresos: this.acmMontoCargos, saldoFinal: this.acmMontoAbonos - this.acmMontoCargos }; 
+    }*/
+
 }

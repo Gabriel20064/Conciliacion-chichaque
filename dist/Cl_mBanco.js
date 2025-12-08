@@ -3,8 +3,23 @@ export default class Cl_mBanco {
     transacciones = [];
     STORAGE_KEY = "Movimientos_Bancarios_data";
     //Atributos derivados para los metodos de conciliacion (revision)
+    //Resumen
     acmMontoCargos = 0;
     acmMontoAbonos = 0;
+    //Desglose por categoria
+    cntTransacciones = 0;
+    categoria1 = 0; // Ingresos
+    categoria2 = 0; // Alimentacion
+    categoria3 = 0; // Servicios Basicos
+    categoria4 = 0; // Articulos de Vestimenta
+    categoria5 = 0; // Servicios Publicos
+    categoria6 = 0; // Entretenimiento
+    categoria7 = 0; // Educacion
+    categoria8 = 0; // Gasto del Hogar
+    categoria9 = 0; // Otros
+    //Analisis
+    categoriaMayorGasto = 0; // Categoria con mayor gasto
+    montoMayorGasto = 0; // Monto de la categoria con mayor gasto
     constructor() {
         this.cargar();
     }

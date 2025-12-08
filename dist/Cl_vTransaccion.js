@@ -89,6 +89,14 @@ export default class vTransaccion extends Cl_vGeneral {
             alert("La referencia debe tener 3 caracteres.");
             return;
         }
+        if (+this.inTipoTransaccion.value === 1 && +this.inCategoria.value === 1) {
+            alert("No puedes asignar la categoría 'Ingreso' a una transacción de tipo 'Cargo'.");
+            return;
+        }
+        if (+this.inTipoTransaccion.value === 2 && +this.inCategoria.value !== 1) {
+            alert("Solo puedes asignar la categoría 'Ingreso' a una transacción de tipo 'Abono'.");
+            return;
+        }
         const data = {
             fecha: this.inFecha.value,
             descripcion: this.inDescripcion.value.toLowerCase(),
