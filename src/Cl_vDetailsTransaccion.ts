@@ -27,7 +27,7 @@ export default class Cl_vDetailsTransaccion extends Cl_vGeneral {
         if (!trans) return; 
         this.lblFecha.textContent = trans.fecha; 
         this.lblTipo.textContent = trans.tipoTransaccion === 1 ? "Cargo" : "Abono"; 
-        this.lblMonto.textContent = trans.tipoTransaccion === 1 ? `Bs.${(trans.monto * -1).toFixed(2)}` : `Bs.${trans.monto.toFixed(2)}`; 
+        this.lblMonto.textContent = trans.tipoTransaccion === 1 ? `${(trans.monto * -1).toFixed(2)} Bs.` : `${trans.monto.toFixed(2)} Bs.`; 
         this.lblDescripcion.textContent = trans.descripcion; 
         this.lblReferencia.textContent = trans.referencia; 
         this.lblCategoria.textContent = trans.categoriaTexto(); 
